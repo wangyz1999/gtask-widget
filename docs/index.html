@@ -34,7 +34,8 @@
   .card h3 { margin: 0 0 4px; font-size: 16px; }
   .card p { margin: 0; color: var(--muted); font-size: 15px; }
   .data-use { margin-top: 28px; }
-  .data-use p { font-size: 15px; }
+  .data-use p { font-size: 15px; margin: 0 0 10px; }
+  .data-use p:last-child { margin-bottom: 0; }
   .data-use a { color: var(--accent); }
   .data-use code { font-size: 13px; overflow-wrap: anywhere; }
   footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 14px; }
@@ -64,17 +65,19 @@
     <div class="card"><h3>Full task control</h3><p>Complete, add, rename, schedule, add subtasks and notes. Syncs with Google Tasks right away.</p></div>
     <div class="card"><h3>Lists and filters</h3><p>All lists or one. Today, Upcoming, Overdue, No date. Search and sort.</p></div>
     <div class="card"><h3>Lightweight</h3><p>About 60 MB of RAM, idle CPU at zero, works offline from an encrypted cache.</p></div>
-    <div class="card"><h3>Private</h3><p>Talks only to Google. No servers, analytics or telemetry. Open source under MIT.</p></div>
+    <div class="card"><h3>Pure front end</h3><p>No backend, analytics or telemetry. The developers never see your data. Open source under MIT.</p></div>
   </div>
 
   <section class="card data-use">
-    <h3>How GTask Widget uses your Google data</h3>
-    <p>When you click <strong>Connect Google account</strong>, GTask Widget asks Google for one permission:
+    <h3>A pure front end: your data stays between you and Google</h3>
+    <p>GTask Widget is only a desktop front end for Google Tasks. It has <strong>no backend and no servers</strong>.
+      The developers never collect, receive, store or use any of your data.</p>
+    <p>When you click <strong>Connect Google account</strong>, the app asks Google for one permission:
       to view and edit your Google Tasks (<code>https://www.googleapis.com/auth/tasks</code>).
-      It uses this only to show your task lists and tasks on your desktop and to save changes you make in the widget:
-      completing, adding, renaming, scheduling, editing notes, deleting tasks and creating lists.
-      Your data stays on your computer and is sent only to Google. Nothing goes to the developers or anyone else.
-      Read the full <a href="privacy.html">Privacy Policy</a>.</p>
+      It uses this only to show your tasks on your desktop and to save changes you make in the widget.
+      It does not access any other Google account data: no email address, profile, contacts, calendar or files.</p>
+    <p>The only things kept are on your own computer: your sign-in token and an offline copy of your tasks,
+      both encrypted. Signing out deletes them. Read the full <a href="privacy.html">Privacy Policy</a>.</p>
   </section>
 
   <footer>

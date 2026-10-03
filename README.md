@@ -36,7 +36,7 @@
 - **Full task management.** Check off, add, rename, add subtasks, set due dates, edit notes, and delete with undo. Every change syncs to Google Tasks right away, so the Google Tasks app on your phone stays up to date.
 - **Lists and filters.** Show all lists grouped, or just one. Filter by Today, Upcoming, Overdue or No date. Search titles and notes. Sort by your own order or by due date.
 - **Lightweight.** About 60 MB of RAM, no CPU use while idle, no background services. Starts instantly from an encrypted local cache and still shows your tasks when you're offline.
-- **Private by design.** It talks only to Google. There are no servers, analytics or telemetry. Your sign-in token is encrypted with Windows DPAPI. See [PRIVACY.md](PRIVACY.md).
+- **A pure front end.** There's no backend: the developers never collect, store or use any of your data. The widget reads and writes only your Google Tasks, and nothing else in your Google account. See [PRIVACY.md](PRIVACY.md).
 
 <p align="center">
   <img src="assets/screenshot-forest.png" width="300" alt="Clear glass level on a dark green wallpaper, single list view">
@@ -87,9 +87,11 @@ When the **Today** filter is on, new tasks are due today automatically.
 
 ## Privacy & security
 
+**GTask Widget is a pure front end for Google Tasks.** It has no backend or server, and the developers do not collect, receive, store, use or share any user data. It accesses only your tasks: not your email address, profile, contacts, calendar or files. Your tasks travel only between your PC and Google.
+
 - Sign-in uses Google's OAuth 2.0 for desktop apps: a loopback redirect with PKCE, in your normal browser. The app never sees your password.
 - The only permission requested is `https://www.googleapis.com/auth/tasks`.
-- The token and task cache are stored in `%APPDATA%\GTaskWidget`, encrypted with Windows DPAPI so only your Windows account can read them.
+- The only things saved are on your own PC, in `%APPDATA%\GTaskWidget`: the sign-in token and an offline copy of your tasks, both encrypted with Windows DPAPI so only your Windows account can read them. Signing out deletes both.
 - Network traffic goes only to Google (`accounts.google.com`, `oauth2.googleapis.com`, `tasks.googleapis.com`).
 - Full policy: [PRIVACY.md](PRIVACY.md).
 

@@ -4,6 +4,13 @@
 
 GTask Widget is an open-source desktop app that shows and edits your Google Tasks. It runs entirely on your computer. This policy explains what it accesses and what it does with that data.
 
+## In short
+
+- **GTask Widget is a pure front end for Google Tasks.** It has no backend, no server and no account system of its own.
+- **The developers do not collect, receive, store, use, sell or share any user data.** We never see your tasks or anything else about you.
+- **The app accesses only your Google Tasks**, and no other data in your Google account: not your email address, name, profile, contacts, calendar or files.
+- **Your tasks travel only between your computer and Google.** The only things saved are on your own computer (your sign-in token and an offline copy of your tasks), encrypted, and deleted when you sign out.
+
 ## What the app accesses
 
 When you connect your Google account, the app asks Google for one permission: to view, edit, organize and delete your tasks (OAuth scope `https://www.googleapis.com/auth/tasks`).
@@ -26,9 +33,9 @@ Everything stays on your computer, in `%APPDATA%\GTaskWidget`:
 | `settings.json` | Appearance, position and filter choices | No personal data |
 | `gtask-widget.log` | Diagnostic messages | No task content, no tokens |
 
-## Sharing
+## No collection, no sharing
 
-None. The app talks only to Google's servers (`accounts.google.com`, `oauth2.googleapis.com`, `tasks.googleapis.com`). There is no developer server, no analytics, no advertising, no telemetry and no third-party SDK. The developers never receive your data.
+The app talks only to Google's servers (`accounts.google.com`, `oauth2.googleapis.com`, `tasks.googleapis.com`). There is no developer server, no analytics, no crash reporting, no advertising, no telemetry and no third-party SDK. Nothing about you or your tasks is ever sent to the developers or to anyone other than Google, and the developers have no way to access it.
 
 ## Google API Services User Data Policy
 
