@@ -1,0 +1,25 @@
+# --- Secrets: never commit OAuth client files or tokens ---
+client_secret*.json
+credentials*.json
+token*.json
+token.bin
+gtask_widget/_bundled_client.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Build output
+build/
+dist/
+*.spec.bak
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

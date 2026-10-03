@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gtask-widget"
+description = "A minimal, translucent desktop widget for Google Tasks."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "wangyz1999" }]
+requires-python = ">=3.10"
+dependencies = ["PySide6-Essentials>=6.6"]
+dynamic = ["version"]
+keywords = ["google tasks", "todo", "desktop widget", "windows", "pyside6"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Environment :: Win32 (MS Windows)",
+    "Topic :: Office/Business :: Scheduling",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyinstaller>=6.6", "pillow>=10"]
+
+[project.urls]
+Homepage = "https://github.com/wangyz1999/gtask-widget"
+Issues = "https://github.com/wangyz1999/gtask-widget/issues"
+
+[project.gui-scripts]
+gtask-widget = "gtask_widget.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "gtask_widget.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["gtask_widget*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
