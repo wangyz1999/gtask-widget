@@ -79,8 +79,9 @@ jobs:
         run: |
           Compress-Archive -Path dist/GTaskWidget -DestinationPath "dist/GTaskWidget-$env:VERSION-portable.zip"
           $files = @("dist/GTaskWidget-Setup-$env:VERSION.exe", "dist/GTaskWidget-$env:VERSION-portable.zip")
-          $files | ForEach-Object { "{0}  {1}" -f (Get-FileHash $_ -Algorithm SHA256).Hash.ToLower(), (Split-Path $_ -Leaf) } |
-            Set-Content dist/SHA256SUMS.txt
+          $lines = $files | ForEach-Object { "{0}  {1}" -f (Get-FileHash $_ -Algorithm SHA256).Hash.ToLower(), (Split-Path $_ -Leaf) }
+          # LF endings so `sha256sum -c` works everywhere
+          [IO.File]::WriteAllText("$PWD/dist/SHA256SUMS.txt", ($lines -join "`n") + "`n")
           Get-Content dist/SHA256SUMS.txt
 
       - name: Publish release
