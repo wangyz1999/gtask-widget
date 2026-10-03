@@ -136,7 +136,7 @@ iscc /DAppVersion=0.1.0 packaging\installer.iss         # -> dist\GTaskWidget-Se
 
 1. **One-time setup:** store the project's OAuth client as a repository secret (it never goes into git):
    ```powershell
-   gh secret set GOOGLE_OAUTH_CLIENT_JSON --repo wangyz1999/gtask-widget < path\to\client_secret.json
+   Get-Content -Raw path\to\client_secret.json | gh secret set GOOGLE_OAUTH_CLIENT_JSON --repo wangyz1999/gtask-widget
    ```
 2. Bump `__version__` in `gtask_widget/__init__.py` and add a section to `CHANGELOG.md`.
 3. Tag and push:
